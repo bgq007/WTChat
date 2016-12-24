@@ -27,7 +27,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CzY-ib-XCF">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="bgq007@yahoo.com" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CzY-ib-XCF">
                                 <rect key="frame" x="97.5" y="187" width="180" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="k3F-hG-hgQ"/>
@@ -36,7 +36,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eo0-PW-88Q">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="purple" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eo0-PW-88Q">
                                 <rect key="frame" x="97.5" y="237" width="180" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="MNs-vv-UfQ"/>
@@ -68,11 +68,56 @@
                     <connections>
                         <outlet property="emailTextField" destination="CzY-ib-XCF" id="7dm-o6-7xL"/>
                         <outlet property="passTextField" destination="eo0-PW-88Q" id="Aji-CV-W27"/>
+                        <segue destination="8GS-af-5CD" kind="presentation" identifier="signinSegue" id="TtC-OI-Pcr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="126.38680659670166"/>
+        </scene>
+        <!--WTChat-->
+        <scene sceneID="dat-DM-NSA">
+            <objects>
+                <viewController id="jeO-cp-0RN" customClass="SnapsViewController" customModule="WTChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nys-Ft-cHd"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZLS-9c-yHO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YFu-kk-vDf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="WTChat" id="Om5-TC-eUV">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="1ks-Ar-hqp">
+                            <connections>
+                                <action selector="logoutTapped:" destination="jeO-cp-0RN" id="Xqn-MP-tuL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="5KL-Rz-tjp"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j2S-Ey-7G2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1767.2" y="126.38680659670166"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pru-VT-sGL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8GS-af-5CD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DNW-qN-2cd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jeO-cp-0RN" kind="relationship" relationship="rootViewController" id="GrI-OG-aN3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jnk-ds-vd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="126.38680659670166"/>
         </scene>
     </scenes>
 </document>

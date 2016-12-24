@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -22,7 +27,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1B5B82E5FDA7B160BA06726FCC7F0920</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5C7DEEF4AF3AED5BCC0C6BD4B0B55B38</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
 		<dict>
 			<key>primary</key>
 			<true/>

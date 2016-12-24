@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+
+
 
 class ViewController: UIViewController {
 
@@ -20,11 +24,36 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = UIColor.brown
     }
     
     
     @IBAction func signinButton(_ sender: Any) {
+     FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passTextField.text!, completion: { (user, error) in
+        print("We tried to sign in")
+        if error != nil {
+            print("Error: \(error)")
+            
+            FIRAuth.auth()?.createUser(withEmail: self.emailTextField.text!, password: self.passTextField.text!, completion: { (user, error) in
+                print("We tried to create a user")
+                
+                if error != nil {
+                    print("Error: \(error)")
+                } else {
+                    print("Created User!")
+                    self.performSegue(withIdentifier: "signinSegue", sender: nil)
+                }
+                
+                
+            })
+        } else {
+            print("Signed in")
+            self.performSegue(withIdentifier: "signinSegue", sender: nil)
+        }
+     })
+    
     }
     
 
