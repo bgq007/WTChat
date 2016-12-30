@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 
 
 
@@ -27,6 +28,9 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = UIColor.brown
+        
+   
+        
     }
     
     
@@ -43,6 +47,7 @@ class ViewController: UIViewController {
                     print("Error: \(error)")
                 } else {
                     print("Created User!")
+                    FIRDatabase.database().reference().child("users").child(user!.uid).child("email").setValue(user!.email!)
                     self.performSegue(withIdentifier: "signinSegue", sender: nil)
                 }
                 

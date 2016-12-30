@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -163,11 +164,46 @@
                         <outlet property="imageView" destination="w8u-HA-e1Q" id="sxA-9a-16G"/>
                         <outlet property="nextButton" destination="EpH-Xp-OZD" id="H5g-BP-BHU"/>
                         <outlet property="textFieldText" destination="WcH-u6-iNd" id="02n-2d-Djv"/>
+                        <segue destination="ksp-vN-exJ" kind="show" identifier="sendSegue" id="GpP-q8-0Cz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRN-i6-YDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2482" y="137"/>
+        </scene>
+        <!--Send View Controller-->
+        <scene sceneID="g2x-5j-yCu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ksp-vN-exJ" customClass="SendViewController" customModule="WTChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EPg-sS-GF5"/>
+                        <viewControllerLayoutGuide type="bottom" id="2jh-eh-Trt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sPE-av-Uic">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="l42-ol-giZ">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2jh-eh-Trt" firstAttribute="top" secondItem="l42-ol-giZ" secondAttribute="bottom" id="9nc-Al-7tz"/>
+                            <constraint firstItem="l42-ol-giZ" firstAttribute="leading" secondItem="sPE-av-Uic" secondAttribute="leadingMargin" id="LeA-PY-eET"/>
+                            <constraint firstItem="l42-ol-giZ" firstAttribute="top" secondItem="EPg-sS-GF5" secondAttribute="bottom" id="hw5-eB-Chz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="l42-ol-giZ" secondAttribute="trailing" id="x4J-Yo-ChS"/>
+                            <constraint firstItem="l42-ol-giZ" firstAttribute="centerX" secondItem="sPE-av-Uic" secondAttribute="centerX" id="zLG-SD-qeA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="l42-ol-giZ" id="C28-4l-297"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kH0-sZ-aoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3201" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pru-VT-sGL">

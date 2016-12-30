@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -44,9 +46,38 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     @IBAction func nextTapped(_ sender: Any) {
+        
+        
+        nextButton.setTitle("Uploading...", for: .normal)
+        nextButton.isEnabled = false
+        
+        let imagesFolder = FIRStorage.storage().reference().child("images")
+        
+        let imageData = UIImageJPEGRepresentation(imageView.image!, 0.1)!
+        
+    
+        
+        imagesFolder.child("\(NSUUID().uuidString).jpg").put(imageData, metadata: nil) { (metadata, error) in
+            print("Trying to upload pic")
+            if error != nil {
+                print("We have and error:\(error)")
+            } else {
+                print(metadata?.downloadURL()! as Any)
+                self.performSegue(withIdentifier: "sendSegue", sender: nil)
+            }
+        }
+
+        
+        
+        
+        
+        
+        
+        
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		282755881E0EF76600F68EEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282755871E0EF76600F68EEF /* AppDelegate.swift */; };
 		2827558A1E0EF76600F68EEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282755891E0EF76600F68EEF /* ViewController.swift */; };
-		2827558D1E0EF76600F68EEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2827558B1E0EF76600F68EEF /* Main.storyboard */; };
 		2827558F1E0EF76600F68EEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2827558E1E0EF76600F68EEF /* Assets.xcassets */; };
 		282755921E0EF76600F68EEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282755901E0EF76600F68EEF /* LaunchScreen.storyboard */; };
 		2827559D1E0F07DC00F68EEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2827559C1E0F07DC00F68EEF /* GoogleService-Info.plist */; };
 		2827559F1E0F08FF00F68EEF /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2827559E1E0F08FF00F68EEF /* SnapsViewController.swift */; };
 		282755A11E147A9A00F68EEF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282755A01E147A9A00F68EEF /* CameraViewController.swift */; };
+		282755A31E15E30000F68EEF /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282755A21E15E30000F68EEF /* SendViewController.swift */; };
+		28D0D2271E15E4740068C21B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D0D2261E15E4740068C21B /* Main.storyboard */; };
 		BB5715DCE16BD4B1CD08E3C5 /* Pods_WTChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E8F6F85BF8124A19343088 /* Pods_WTChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +23,6 @@
 		282755841E0EF76600F68EEF /* WTChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		282755871E0EF76600F68EEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		282755891E0EF76600F68EEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2827558C1E0EF76600F68EEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2827558E1E0EF76600F68EEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		282755911E0EF76600F68EEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		282755931E0EF76600F68EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -30,6 +30,8 @@
 		2827559C1E0F07DC00F68EEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2827559E1E0F08FF00F68EEF /* SnapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
 		282755A01E147A9A00F68EEF /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		282755A21E15E30000F68EEF /* SendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
+		28D0D2261E15E4740068C21B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9F4320AB93C0AE66F8199FFB /* Pods-WTChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WTChat/Pods-WTChat.debug.xcconfig"; sourceTree = "<group>"; };
 		D1A3ABB8A0AEB3C8259073A1 /* Pods-WTChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-WTChat/Pods-WTChat.release.xcconfig"; sourceTree = "<group>"; };
 		F3E8F6F85BF8124A19343088 /* Pods_WTChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WTChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,8 +74,9 @@
 				282755871E0EF76600F68EEF /* AppDelegate.swift */,
 				282755891E0EF76600F68EEF /* ViewController.swift */,
 				2827559E1E0F08FF00F68EEF /* SnapsViewController.swift */,
-				2827558B1E0EF76600F68EEF /* Main.storyboard */,
+				282755A21E15E30000F68EEF /* SendViewController.swift */,
 				282755A01E147A9A00F68EEF /* CameraViewController.swift */,
+				28D0D2261E15E4740068C21B /* Main.storyboard */,
 				2827558E1E0EF76600F68EEF /* Assets.xcassets */,
 				282755901E0EF76600F68EEF /* LaunchScreen.storyboard */,
 				282755931E0EF76600F68EEF /* Info.plist */,
@@ -170,7 +173,7 @@
 				282755921E0EF76600F68EEF /* LaunchScreen.storyboard in Resources */,
 				2827559D1E0F07DC00F68EEF /* GoogleService-Info.plist in Resources */,
 				2827558F1E0EF76600F68EEF /* Assets.xcassets in Resources */,
-				2827558D1E0EF76600F68EEF /* Main.storyboard in Resources */,
+				28D0D2271E15E4740068C21B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +235,7 @@
 				2827558A1E0EF76600F68EEF /* ViewController.swift in Sources */,
 				282755A11E147A9A00F68EEF /* CameraViewController.swift in Sources */,
 				282755881E0EF76600F68EEF /* AppDelegate.swift in Sources */,
+				282755A31E15E30000F68EEF /* SendViewController.swift in Sources */,
 				2827559F1E0F08FF00F68EEF /* SnapsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,14 +243,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2827558B1E0EF76600F68EEF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2827558C1E0EF76600F68EEF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		282755901E0EF76600F68EEF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
