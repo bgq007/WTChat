@@ -16,6 +16,9 @@
 		282755A11E147A9A00F68EEF /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282755A01E147A9A00F68EEF /* CameraViewController.swift */; };
 		282755A31E15E30000F68EEF /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282755A21E15E30000F68EEF /* SendViewController.swift */; };
 		28D0D2271E15E4740068C21B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D0D2261E15E4740068C21B /* Main.storyboard */; };
+		28D0D2291E17279F0068C21B /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D0D2281E17279F0068C21B /* user.swift */; };
+		28D0D22B1E1868940068C21B /* message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D0D22A1E1868940068C21B /* message.swift */; };
+		28D0D22D1E186E640068C21B /* ViewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D0D22C1E186E640068C21B /* ViewMessageViewController.swift */; };
 		BB5715DCE16BD4B1CD08E3C5 /* Pods_WTChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E8F6F85BF8124A19343088 /* Pods_WTChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +35,9 @@
 		282755A01E147A9A00F68EEF /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		282755A21E15E30000F68EEF /* SendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		28D0D2261E15E4740068C21B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		28D0D2281E17279F0068C21B /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
+		28D0D22A1E1868940068C21B /* message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = message.swift; sourceTree = "<group>"; };
+		28D0D22C1E186E640068C21B /* ViewMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewMessageViewController.swift; sourceTree = "<group>"; };
 		9F4320AB93C0AE66F8199FFB /* Pods-WTChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WTChat/Pods-WTChat.debug.xcconfig"; sourceTree = "<group>"; };
 		D1A3ABB8A0AEB3C8259073A1 /* Pods-WTChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-WTChat/Pods-WTChat.release.xcconfig"; sourceTree = "<group>"; };
 		F3E8F6F85BF8124A19343088 /* Pods_WTChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WTChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,10 +79,13 @@
 				2827559B1E0F065200F68EEF /* WTChat.entitlements */,
 				282755871E0EF76600F68EEF /* AppDelegate.swift */,
 				282755891E0EF76600F68EEF /* ViewController.swift */,
+				28D0D2281E17279F0068C21B /* user.swift */,
 				2827559E1E0F08FF00F68EEF /* SnapsViewController.swift */,
+				28D0D22A1E1868940068C21B /* message.swift */,
 				282755A21E15E30000F68EEF /* SendViewController.swift */,
 				282755A01E147A9A00F68EEF /* CameraViewController.swift */,
 				28D0D2261E15E4740068C21B /* Main.storyboard */,
+				28D0D22C1E186E640068C21B /* ViewMessageViewController.swift */,
 				2827558E1E0EF76600F68EEF /* Assets.xcassets */,
 				282755901E0EF76600F68EEF /* LaunchScreen.storyboard */,
 				282755931E0EF76600F68EEF /* Info.plist */,
@@ -232,8 +241,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D0D22B1E1868940068C21B /* message.swift in Sources */,
+				28D0D22D1E186E640068C21B /* ViewMessageViewController.swift in Sources */,
 				2827558A1E0EF76600F68EEF /* ViewController.swift in Sources */,
 				282755A11E147A9A00F68EEF /* CameraViewController.swift in Sources */,
+				28D0D2291E17279F0068C21B /* user.swift in Sources */,
 				282755881E0EF76600F68EEF /* AppDelegate.swift in Sources */,
 				282755A31E15E30000F68EEF /* SendViewController.swift in Sources */,
 				2827559F1E0F08FF00F68EEF /* SnapsViewController.swift in Sources */,

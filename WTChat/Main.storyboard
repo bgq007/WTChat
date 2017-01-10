@@ -79,7 +79,7 @@
         <!--WTChat-->
         <scene sceneID="dat-DM-NSA">
             <objects>
-                <viewController id="jeO-cp-0RN" customClass="SnapsViewController" customModule="WTChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="jeO-cp-0RN" customClass="SnapsViewController" customModule="WTChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nys-Ft-cHd"/>
                         <viewControllerLayoutGuide type="bottom" id="ZLS-9c-yHO"/>
@@ -87,7 +87,19 @@
                     <view key="view" contentMode="scaleToFill" id="YFu-kk-vDf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HEj-9C-AKz">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZLS-9c-yHO" firstAttribute="top" secondItem="HEj-9C-AKz" secondAttribute="bottom" id="60h-Bo-u2t"/>
+                            <constraint firstItem="HEj-9C-AKz" firstAttribute="top" secondItem="Nys-Ft-cHd" secondAttribute="bottom" id="F8E-33-qdE"/>
+                            <constraint firstItem="HEj-9C-AKz" firstAttribute="leading" secondItem="YFu-kk-vDf" secondAttribute="leadingMargin" id="FFh-pq-aFP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HEj-9C-AKz" secondAttribute="trailing" id="gYj-o3-9iW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="WTChat" id="Om5-TC-eUV">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="1ks-Ar-hqp">
@@ -101,10 +113,59 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="HEj-9C-AKz" id="0IX-tE-OtI"/>
+                        <segue destination="EsU-zK-Gy7" kind="show" identifier="viewMessageSegue" id="UDC-RT-b7K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2S-Ey-7G2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1767.2" y="126.38680659670166"/>
+        </scene>
+        <!--View Message View Controller-->
+        <scene sceneID="y6v-fN-ujE">
+            <objects>
+                <viewController id="EsU-zK-Gy7" customClass="ViewMessageViewController" customModule="WTChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mQz-85-gqg"/>
+                        <viewControllerLayoutGuide type="bottom" id="qO2-FL-zT8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7gw-mE-hDW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuj-0g-2Gs">
+                                <rect key="frame" x="36" y="626" width="303" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gCe-Se-u9c">
+                                <rect key="frame" x="26" y="74" width="323" height="542"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cuj-0g-2Gs" firstAttribute="centerX" secondItem="7gw-mE-hDW" secondAttribute="centerX" id="9eN-lx-D17"/>
+                            <constraint firstItem="gCe-Se-u9c" firstAttribute="top" secondItem="mQz-85-gqg" secondAttribute="bottom" constant="10" id="B73-Ld-bNk"/>
+                            <constraint firstItem="Cuj-0g-2Gs" firstAttribute="centerX" secondItem="7gw-mE-hDW" secondAttribute="centerX" id="KZh-xw-Uz3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gCe-Se-u9c" secondAttribute="trailing" constant="10" id="KgE-oh-RKZ"/>
+                            <constraint firstItem="gCe-Se-u9c" firstAttribute="leading" secondItem="7gw-mE-hDW" secondAttribute="leadingMargin" constant="10" id="NhP-qb-OgX"/>
+                            <constraint firstItem="qO2-FL-zT8" firstAttribute="top" secondItem="Cuj-0g-2Gs" secondAttribute="bottom" constant="20" id="kf9-yZ-SQK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cuj-0g-2Gs" secondAttribute="trailing" constant="20" id="ogF-jN-qe5"/>
+                            <constraint firstItem="Cuj-0g-2Gs" firstAttribute="leading" secondItem="7gw-mE-hDW" secondAttribute="leadingMargin" constant="20" id="vAi-db-Plh"/>
+                            <constraint firstItem="Cuj-0g-2Gs" firstAttribute="top" secondItem="gCe-Se-u9c" secondAttribute="bottom" constant="10" id="xOE-j9-gOZ"/>
+                            <constraint firstItem="gCe-Se-u9c" firstAttribute="centerX" secondItem="7gw-mE-hDW" secondAttribute="centerX" id="zj1-v1-cfK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descripLabel" destination="Cuj-0g-2Gs" id="cTw-zY-ICT"/>
+                        <outlet property="imageView" destination="gCe-Se-u9c" id="utl-Sb-rNm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1St-Ys-YWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1767" y="818"/>
         </scene>
         <!--WTChat-->
         <scene sceneID="LRq-0e-imE">

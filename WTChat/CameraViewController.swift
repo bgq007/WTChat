@@ -63,7 +63,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                 print("We have and error:\(error)")
             } else {
                 print(metadata?.downloadURL()! as Any)
-                self.performSegue(withIdentifier: "sendSegue", sender: nil)
+                self.performSegue(withIdentifier: "sendSegue", sender: metadata?.downloadURL()!.absoluteString)
             }
         }
 
@@ -77,7 +77,19 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            }
+        
+        let nextVC = segue.destination as! SendViewController
+        nextVC.imageURL = sender as! String
+        nextVC.descrip = textFieldText.text!
+        
+    
+    
+    
+    }
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
