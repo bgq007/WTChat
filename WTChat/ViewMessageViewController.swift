@@ -8,6 +8,10 @@
 
 import UIKit
 import SDWebImage
+import FirebaseDatabase
+import Firebase
+import FirebaseAuth
+import FirebaseStorage
 
 
 class ViewMessageViewController: UIViewController {
@@ -23,9 +27,22 @@ class ViewMessageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.brown
         
         descripLabel.text = message.descrip
         imageView.sd_setImage(with: URL(string: message.imageURL))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        FIRDatabase.database().reference().child("users").child(FIRAuth.auth()!.currentUser!.uid).child("message").child(message.key).removeValue()
+        
+
+        print("Goodbye")
+        
+        FIRStorage.storage().reference().child("images").child("\(message.uuid).jpg").delete { (error) in
+        print("We deleted")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

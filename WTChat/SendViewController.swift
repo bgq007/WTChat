@@ -20,6 +20,8 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var imageURL = ""
     var descrip = ""
+    var uuid = ""
+    
     
     
     override func viewDidLoad() {
@@ -66,7 +68,7 @@ class SendViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = users[indexPath.row]
         
-        let message = ["from":user.email, "description":descrip, "imageURL":imageURL]
+        let message = ["from":user.email, "description":descrip, "imageURL":imageURL, "uuid":uuid]
         FIRDatabase.database().reference().child("users").child(user.uid).child("message").childByAutoId().setValue(message)
     
         navigationController!.popToRootViewController(animated: true)

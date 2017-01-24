@@ -36,6 +36,8 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             message.imageURL = (snapshot.value as! NSDictionary)["imageURL"] as! String
             message.from =  (snapshot.value as! NSDictionary)["from"] as! String
             message.descrip =  (snapshot.value as! NSDictionary)["description"] as! String
+            message.key = snapshot.key
+            message.uuid = (snapshot.value as! NSDictionary)["uuid"] as! String
             
             self.messages.append(message)
             self.tableView.reloadData()
@@ -43,6 +45,19 @@ class SnapsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             self.tableView.sectionIndexBackgroundColor = UIColor.brown
             
             
+        })
+        
+        FIRDatabase.database().reference().child("users").child(FIRAuth.auth()!.currentUser!.uid).child("message").observe(FIRDataEventType.childRemoved, with: { (snapshot) in
+            print(snapshot)
+            
+           var index = 0
+            for message in self.messages {
+                if message.key == snapshot.key {
+                    self.messages.remove(at: index)
+                }
+                index += 1
+            }
+            self.tableView.reloadData()
         })
     }
 

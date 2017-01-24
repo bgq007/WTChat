@@ -18,6 +18,8 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var nextButton: UIButton!
     
+    var uuid = NSUUID().uuidString
+    
     // Load Camera Stuff
     var imagePicker = UIImagePickerController()
     
@@ -57,7 +59,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     
         
-        imagesFolder.child("\(NSUUID().uuidString).jpg").put(imageData, metadata: nil) { (metadata, error) in
+        imagesFolder.child("\(uuid).jpg").put(imageData, metadata: nil) { (metadata, error) in
             print("Trying to upload pic")
             if error != nil {
                 print("We have and error:\(error)")
@@ -81,6 +83,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let nextVC = segue.destination as! SendViewController
         nextVC.imageURL = sender as! String
         nextVC.descrip = textFieldText.text!
+        nextVC.uuid = uuid
         
     
     
